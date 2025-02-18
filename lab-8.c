@@ -1,4 +1,5 @@
 // Write a recursive program to implement TOH problem. (Show the output for 3 disks)
+//Problem of tower of hanoi
 #include <stdio.h>
 #include <conio.h>
 void TOH(int, char, char, char);
