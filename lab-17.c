@@ -78,6 +78,7 @@ int QuickSort(int A,int l,int r){
         p = partion(A, l, r);
         QuickSort(A, l, p - 1);
         QuickSort(A, p+1, r);
+        
     }
 }
 

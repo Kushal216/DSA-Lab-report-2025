@@ -2,12 +2,12 @@
 #include <stdio.h>
 #include <conio.h>
 #include <string.h>
-#include<ctype.h>
+#include <ctype.h>
 int prec(char);
 void main()
 {
   int i, op = -1, po = -1;
-  char equ[100],po_stack[100], op_stack[100];
+  char equ[100], po_stack[100], op_stack[100];
   printf("Enter the valid Equation:");
   gets(equ);
   // char equ[] = "(A+B*C$D)/((E+F-G)*H)$I/J";
@@ -47,6 +47,7 @@ void main()
   }
   po_stack[++po] = '\0';
   printf("The Postfix Expression is: %s", po_stack);
+  printf("\n\nProgram By: KUSHAL DHAKAL");
   getch();
 }
 

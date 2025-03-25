@@ -12,6 +12,7 @@ int main()
     {
         printf("%d\t", fibo(i));
     }
+    printf("\n\nProgram By: KUSHAL DHAKAL");
 }
 int fibo(int n)
 {
