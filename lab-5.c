@@ -10,6 +10,7 @@ int main()
     scanf("%d", &num);
     fact = factorial(num);
     printf("Factorial of %d is: %ld", num, fact);
+    printf("\n\nProgram By: KUSHAL DHAKAL");
     getch();
 }
 long int factorial(int n)

@@ -9,6 +9,7 @@ int main()
     printf("Enter the number of disks: ");
     scanf("%d", &n);
     TOH(n, 'S', 'D', 'I');
+    printf("\n\nProgram By: KUSHAL DHAKAL");
     getch();
 }
 void TOH(int n, char A, char B, char C )

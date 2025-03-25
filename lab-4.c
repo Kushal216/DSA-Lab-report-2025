@@ -7,12 +7,12 @@ int prec(char);
 void main()
 {
     int i, op = -1, pre = -1;
-    char pre_stack[100], op_stack[100];
-    //  char equ[100],pre_stack[100], op_stack[100];
-    //   printf("Enter the valid Equation:");
-    //   gets(equ);
+//    char pre_stack[100], op_stack[100];
+    char equ[100],pre_stack[100], op_stack[100];
+       printf("Enter the valid Equation:");
+       gets(equ);
     // char equ[] = "(A+B*C$D)/((E+F-G)*H)$I/J";
-    char equ[] = "(A+B*C/D)*(E-F/G)";
+//    char equ[] = "(A+B*C/D)*(E-F/G)";
     int length = strlen(equ);
     for (i = length - 1; i >= 0; i--)
     {
@@ -51,6 +51,7 @@ void main()
     {
         printf("%c", pre_stack[i]);
     }
+    printf("\n\nProgram By: KUSHAL DHAKAL");
     getch();
 }
 
