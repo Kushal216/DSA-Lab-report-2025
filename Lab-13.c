@@ -16,11 +16,12 @@ int main()
 {
     int choice, item;
     printf("Tree Traverse\n");
+    printf("Choose any one:-\n");
+    printf("1. Insert an Element in BST\n2. Pre-Order Traversal\n3. Post-Order Traversal\n4. In-Order Traversal\n5. Exit\n\n");
 
     while (choice != 5)
     {
-        printf("Choose any one:-\n ");
-        printf("1) Insert an Element in BST\n2) Pre-Order Traversal\n3) Post-Order Traversal\n4) In-Order Traversal\n5) Exit\n\n");
+       
         printf("Enter your choice: ");
         scanf("%d", &choice);
         switch (choice)
@@ -47,7 +48,7 @@ int main()
             break;
         case 5:
             printf("Exiting...");
-
+  			printf("\n\nProgram By: KUSHAL DHAKAL");
             exit(0);
             break;
         default:

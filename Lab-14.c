@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <conio.h>
 int i;
-LinerSearch(int key, int n, int Arr[])
+void LinerSearch(int key, int n, int Arr[])
 {
   int temp = 0;
   for (i = 0; i < n; i++)
@@ -26,6 +26,7 @@ int main()
   int A[] = {1, 2, 4, 6, 5, 9, 11};
   int size = sizeof(A) / sizeof(A[0]);
   int key;
+  printf("Array: {1, 2, 4, 6, 5, 9, 11}\n");
   printf("Enter the number to search in the array:");
   scanf("%d", &key);
   LinerSearch(key, size, A);

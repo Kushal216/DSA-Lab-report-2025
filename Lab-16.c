@@ -47,8 +47,9 @@ int search(int key)
 // Display function
 void display()
 {
+	int i;
     printf("\nHash Table:\n");
-    for (int i = 0; i < t_size; i++)
+    for (i = 0; i < t_size; i++)
     {
         if (h_tab[i] == EMPTY)
             printf("[%d] --> Empty\n", i);
@@ -60,15 +61,17 @@ void display()
 // Main function
 int main()
 {
+	int i;
     // Initialize hash table with empty values
-    for (int i = 0; i < t_size; i++)
+    for ( i = 0; i < t_size; i++)
         h_tab[i] = EMPTY;
     printf("Hashing Program with Linear Probing\n");
     int choice, key;
+    printf("Choose any one:-\n");
+    printf("1. Insert element in Hash Table\n2. Search element in Hash Table\n3. Display the Hash Table\n4. Exit\n\n");
     while (choice != 4)
     {
-        printf("Choose any one:-\n");
-        printf("1) Insert element in Hash Table\n2) Search element in Hash Table\n3) Display the Hash Table\n4) Exit\n\n");
+
         printf("Enter your choice: ");
         scanf("%d", &choice);
 
