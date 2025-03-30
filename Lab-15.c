@@ -27,11 +27,11 @@ int main()
     printf("Enter the number of elements in array: ");
     scanf("%d", &n);
     printf("Enter %d elements:\n", n);
-    for (int i = 0; i < n; i++)
+    for (i = 0; i < n; i++)
     {
         scanf("%d", &arr[i]);
     }
-    printf(" Enter the value of Key: ");
+    printf("\nEnter the value of Key: ");
     scanf("%d", &key);
     for (i = 0; i < n; i++)
     {

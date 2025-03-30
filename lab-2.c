@@ -1,5 +1,5 @@
 /*Write a menu driven program to illustrate basic
-operations of stack using array.
+operations of stack using pointor.
 a) Push
 b) Pop
 c) Traverse
@@ -7,88 +7,109 @@ d) Exit */
 
 #include <stdio.h>
 #include <conio.h>
-#define MAXSIZE 10
-int stack[MAXSIZE];
-int top = -1;
-void stack_push(int val, int n)
+#include <stdlib.h>
+#include <process.h>
+struct node
 {
-	if (n == MAXSIZE)
-	{
-		printf("Stack  is Full");
-	}
-	else
-	{
-		n = n + 1;
-		stack[n] = val;
-		printf("%d sucessfully on the top of the stack. ", stack[n]);
-	}
-}
-void stack_pop(int n)
-{
-	if (n == -1)
-	{
-		printf("Stack is Empty");
-	}
-	else
-	{
-		printf("%d sucessfully on the top of the stack. ", stack[n]);
-		n--;
-	}
-}
-void stack_traverse(int n)
-{
-	if (n == -1)
-	{
-		printf("Stack is Empty");
-	}
-	else
-	{
-		int i;
-		for (i = n; i >= 0; i--)
-		{
-			printf("%d\t", stack[i]);
-		}
-		printf("\nTraverse Sucessfully. ");
-	}
-}
-
+    int data;
+    struct node *next;
+};
+typedef struct node NODE;
+NODE *tos = NULL;
+void push();
+void pop();
+void display();
 int main()
 {
-	int c, val, n;
-	stack[5] = 22;
-	printf("Enter the current position of the stack:");
-	scanf("%d", &n);
-	printf("*****************************************************\n");
-	printf("Write a menu driven program to illustrate basic operations of stack using array.\n  1. Push\n  2. Pop\n  3. Traverse\n  4. Exit\n");
-	printf("Enter your choice:");
-	scanf("%d", &c);
-	switch (c)
-	{
-	case 1:
-	{
-		printf("Enter the value to be Push in the top of the stack:");
-		scanf("%d", &val);
-		stack_push(val, top);
-		break;
-	}
-	case 2:
-	{
-		stack_pop(n);
-		break;
-	}
-	case 3:
-	{
-		stack_traverse(n);
-		break;
-	}
-	case 4:
-	{
-		printf("Exiting from the program......\n");
-		break;
-	}
-	default:
-	{
-		printf("You Enter the wrong choice!!!");
-	}
-	}
+    int choice = 0;
+    printf("\tStack Operations Using Pointer\n");
+    printf("----------------------------------------------------------\n");
+    while (choice != 4)
+    {
+        printf("Choose any one operation from below...\n");
+        printf("1) Push\n2) Pop\n3) Traverse\n4) Exit\n");
+        // choice=choice+4;
+        printf("\nYour Choice? ");
+        scanf("%d", &choice);
+        switch (choice)
+        {
+        case 1:
+            push();
+            break;
+        case 2:
+            pop();
+            break;
+        case 3:
+            display();
+            break;
+        case 4:
+            printf("Exiting...");
+            exit(0);
+            
+            default:
+            printf("Please choose Valid Option!!\n");
+            break;
+        }
+    }
+    printf("\nProgram By: KUSHAL DHAKAL");
+    return 0;
+}
+void push()
+{
+    NODE *ptr;
+    ptr = (NODE *)malloc(sizeof(NODE));
+    int item;
+    printf("Enter the value to be pushed: ");
+    scanf("%d", &item);
+    if (tos == NULL)
+    {
+        ptr->data = item;
+        ptr->next = NULL;
+        tos = ptr;
+        printf("Value pushed!!\n\n");
+    }
+    // else if (!ptr)
+    // {
+    //     printf("Stack Overflow!! Cannot Push!!\n");
+    // }
+    else
+    {
+        ptr->data = item;
+        ptr->next = tos;
+        tos = ptr;
+        printf("Value pushed!!\n\n");
+    }
+}
+void pop()
+{
+    NODE *temp;
+    if (tos == NULL)
+    {
+        printf("Stack is Empty!!\n\n");
+        return;
+    }
+    else
+    {
+        temp = tos;
+        tos = tos->next;
+        printf("The popped element is: %d\n\n", temp->data);
+        free(temp);
+    }
+}
+void display(){
+    NODE *temp;
+    if(tos==NULL){
+        printf("Stack Empty!!\n\n");
+        return;
+    }
+    else{
+        temp = tos;
+        printf("Stack Elements from Top to Bottom are:\n");
+        while (temp!=NULL)
+        {
+            printf("%d\n",temp->data);
+            temp = temp->next;
+        }
+        printf("\n");
+    }
 }

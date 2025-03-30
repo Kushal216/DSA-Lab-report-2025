@@ -1,9 +1,8 @@
-// Write a program to implement Breadth First Search and Depth First Search in graph.
 #include <stdio.h>
 #include <stdlib.h>
 
 #define MAX 100 // Maximum number of vertices
-
+int i, j;
 int queue[MAX], front = -1, rear = -1;
 int visited[MAX];
 
@@ -28,7 +27,7 @@ int dequeue()
 // BFS Function
 void BFS(int graph[MAX][MAX], int vertices, int start)
 {
-    for (int i = 0; i < vertices; i++)
+    for (i = 0; i < vertices; i++)
         visited[i] = 0; // Reset visited array
 
     enqueue(start);
@@ -41,7 +40,7 @@ void BFS(int graph[MAX][MAX], int vertices, int start)
         int node = dequeue();
         printf("%d ", node);
 
-        for (int i = 1; i <= vertices; i++)
+        for (i = 1; i <= vertices; i++)
         {
             if (graph[node][i] == 1 && visited[i] == 0)
             {
@@ -59,7 +58,7 @@ void DFS(int graph[MAX][MAX], int vertices, int node)
     printf("%d ", node);
     visited[node] = 1;
 
-    for (int i = 1; i <= vertices; i++)
+    for (i = 1; i <= vertices; i++)
     {
         if (graph[node][i] == 1 && visited[i] == 0)
         {
@@ -81,7 +80,7 @@ int main()
     scanf("%d", &edges);
 
     printf("Enter the edges (u v):\n");
-    for (int i = 0; i < edges; i++)
+    for (i = 0; i < edges; i++)
     {
         scanf("%d %d", &u, &v);
         graph[u][v] = 1; // Mark edge (u -> v)
@@ -95,11 +94,11 @@ int main()
     BFS(graph, vertices, start);
 
     // Reset visited array for DFS
-    for (int i = 0; i <= vertices; i++)
+    for (i = 0; i <= vertices; i++)
         visited[i] = 0;
 
     printf("DFS Traversal: ");
     DFS(graph, vertices, start);
-    printf("\n\nProgram By: KUSHAL DHAKAL");
+    printf("\nProgram By: KUSHAL DHAKAL");
     return 0;
 }
